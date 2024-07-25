@@ -3,6 +3,7 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@nextui-org/react";
+import Link from "next/link";
 
 const BentoGrid = ({
   children,
@@ -71,6 +72,8 @@ const BentoCard = ({
       <Button
         endContent={<ArrowRightIcon className="ml-2 h-4 w-4" />}
         variant="flat"
+        href={href}
+        as={Link}
         size="sm"
         className="pointer-events-auto"
       >

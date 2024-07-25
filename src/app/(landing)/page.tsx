@@ -13,6 +13,8 @@ import {
   MaterialSymbolsBook2,
 } from "@/icon/landing";
 import { VelocityScroll } from "./components/scroll-text";
+import { cn } from "@/lib/utils";
+import GridPattern from "./components/grid-bg";
 
 const features = [
   {
@@ -48,34 +50,30 @@ const features = [
     name: "音标速查表",
     description:
       "快速查询KK音标和国际音标，基础读法，例词，绕口令训练口腔肌肉。",
-    href: "/",
+    href: "/phonetic",
     cta: "查看",
     background: <img className="absolute -right-20 -top-20 opacity-60" />,
     className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
-    // content: (
-    //   <>
-    //     <div className="relative">
-    //       {/* Top blur */}
-    //       <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-white to-transparent"></div>
-
-    //       {/* Image */}
-    //       <img
-    //         src="/landing/vowel-chart.png"
-    //         alt="Vowel Chart"
-    //         className="w-full h-24 object-cover"
-    //       />
-
-    //       {/* Bottom blur */}
-    //       <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-white to-transparent"></div>
-    //     </div>
-    //   </>
-    // ),
+    content: (
+      <>
+        <GridPattern
+          numSquares={30}
+          maxOpacity={0.1}
+          duration={3}
+          repeatDelay={1}
+          className={cn(
+            "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+            "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12"
+          )}
+        />
+      </>
+    ),
   },
 ];
 
 export default function BentoDemo() {
   return (
-    <div className="lg:h-screen xl:overflow-hidden flex justify-center items-center p-6 lg:p-0">
+    <div className="h-[calc(100vh-64px)] flex justify-center items-center p-6 lg:p-0">
       <BentoGrid className="lg:grid-rows-3 lg:grid-cols-2 max-w-7xl ">
         {features.map((feature) => (
           <BentoCard key={feature.name} {...feature} />
