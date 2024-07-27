@@ -9,7 +9,7 @@ const Phonetic: FC<PhoneticProps> = ({ params }) => {
   const id = params.id;
 
   return (
-    <Page className="p-0 flex bg-[#F8FAFC] h-[calc(100vh-64px)]">
+    <Page className="max-w-full p-6 flex bg-[#F8FAFC] h-[calc(100vh-64px)]">
       <div className="w-[600px] h-full p-6 ">
         <Basic index={id} />
       </div>

@@ -20,6 +20,7 @@ const features = [
   {
     Icon: IcRoundTransform,
     name: "语法分析工具",
+    disabled: true,
     description:
       "使用AI快速分析出句子的结构，以及如何通过语法结构理解句子的含义",
     href: "/",
@@ -31,6 +32,7 @@ const features = [
     Icon: MaterialSymbolsBook2,
     name: "语法小书",
     description: "英语基础语法知识，包括词类、句型、句子成分等",
+    disabled: true,
     href: "/",
     cta: "看看",
     background: <img className="absolute -right-20 -top-20 opacity-60" />,
@@ -74,6 +76,7 @@ const features = [
 export default function BentoDemo() {
   return (
     <div className="h-[calc(100vh-64px)] flex justify-center items-center p-6 lg:p-0">
+      <div className="absolute top-0 z-[-2] h-screen w-screen bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"></div>
       <BentoGrid className="lg:grid-rows-3 lg:grid-cols-2 max-w-7xl ">
         {features.map((feature) => (
           <BentoCard key={feature.name} {...feature} />

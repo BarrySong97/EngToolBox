@@ -33,12 +33,14 @@ const BentoCard = ({
   href,
   content,
   cta,
+  disabled = false,
 }: {
   name: string;
   className: string;
   content?: ReactNode;
   background: ReactNode;
   Icon: any;
+  disabled?: boolean;
   description: string;
   href: string;
   cta: string;
@@ -73,11 +75,12 @@ const BentoCard = ({
         endContent={<ArrowRightIcon className="ml-2 h-4 w-4" />}
         variant="flat"
         href={href}
+        isDisabled={disabled}
         as={Link}
         size="sm"
         className="pointer-events-auto"
       >
-        {cta}
+        {disabled ? "开发中" : cta}
       </Button>
     </div>
     <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-black/[.03] group-hover:dark:bg-neutral-800/10" />

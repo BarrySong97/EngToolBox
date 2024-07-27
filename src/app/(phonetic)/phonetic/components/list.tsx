@@ -109,6 +109,7 @@ const List: React.FC = () => {
   ) => [
     {
       key: "1",
+      headerClass: "!pl-0",
       label: (
         <div className="text-xl font-semibold">
           元音 - {vowelCharacteristics[0]}
@@ -121,6 +122,7 @@ const List: React.FC = () => {
     },
     {
       key: "2",
+      headerClass: "!pl-0",
       label: (
         <div className="text-xl font-semibold">
           清音 - {vowelCharacteristics[1]}
@@ -133,6 +135,7 @@ const List: React.FC = () => {
     },
     {
       key: "3",
+      headerClass: "!pl-0",
       label: (
         <div className="text-xl font-semibold">
           浊音 - {vowelCharacteristics[2]}
@@ -170,7 +173,7 @@ const List: React.FC = () => {
               [selected as string]: keys as string[],
             });
           }}
-          style={{ background: "transparent" }}
+          style={{ background: "transparent", paddingLeft: 0 }}
           items={getItems(panelStyle)}
         />
       </Tab>
